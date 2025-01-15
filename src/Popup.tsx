@@ -52,7 +52,10 @@ const Popup: React.FC = () => {
         setIsLoggedIn(false);
         setError('Failed to verify token. Please try again.');
       } finally {
-        setIsLoading(false);
+        //wait 1.2 seconds
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1200);
       }
     };
 
@@ -135,6 +138,38 @@ const Popup: React.FC = () => {
                 <p className="text-center text-red-600 mt-2 font-medium">
                   {error}
                 </p>
+              )}
+              {isLoggedIn && userData && (
+                <div className="space-y-4">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
+                      <span className="text-blue-600 text-lg font-semibold">
+                        {userData.name?.[0]?.toUpperCase() || userData.email[0].toUpperCase()}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center py-1">
+                      <span className="text-gray-600">Name</span>
+                      <span className="font-medium">{userData.name || 'N/A'}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <span className="text-gray-600">Email</span>
+                      <span className="font-medium">{userData.email}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <span className="text-gray-600">Plan</span>
+                      <span className="capitalize font-medium">
+                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                          userData.plan === 'pro' ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800'
+                        }`}>
+                          {userData.plan}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               )}
             </>
           )}
