@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "DemoPenguin",
+  "version": "1.0",
+  "description": "A demo Chrome Extension with a React sidebar styled with Tailwind CSS using TypeScript",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage",
+    "identity"
+  ],
+  "host_permissions": [
+    "http://localhost:3000/*"
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost:3000/*"]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon48.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["sidebar.html", "sidebar.js", "sidebar.css", "penguin-walk.gif"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+

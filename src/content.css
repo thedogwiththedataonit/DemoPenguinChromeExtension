@@ -1,0 +1,7 @@
+.crx_mouse_visited {
+    background-color: rgba(255, 192, 203, 0.2) !important;
+    outline: 2px solid pink !important;
+    cursor: pointer !important;
+  }
+  
+  

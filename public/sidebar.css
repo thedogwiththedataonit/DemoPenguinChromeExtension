@@ -1,0 +1,118 @@
+#demopenguin-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 9999;
+  }
+  
+  #demopenguin-sidebar.open {
+    right: 0;
+  }
+  
+  #demopenguin-toggle {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 10000;
+    background-color: #343a40;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+  }
+  
+  #demopenguin-sidebar iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+        /* nohover */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        /* nohover border or background */
+        border: none !important;
+        background: none !important;
+  }
+  
+  
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  #root {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .no-hover {
+    pointer-events: none;
+  }
+  
+  .clickable {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  
+  /* New styles for element info */
+  .element-info {
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .element-tag {
+    color: #881280;
+  }
+  
+  .element-id {
+    color: #1a1aa6;
+  }
+  
+  .element-class {
+    color: #008000;
+  }
+  
+  .element-attr-name {
+    color: #994500;
+  }
+  
+  .element-attr-value {
+    color: #1a1aa6;
+  }
+  
+  .element-text {
+    color: #333;
+  }
+  
+  
